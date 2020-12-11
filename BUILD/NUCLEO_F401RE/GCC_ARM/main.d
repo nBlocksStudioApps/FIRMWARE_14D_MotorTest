@@ -150,7 +150,7 @@ BUILD\NUCLEO_F401RE\GCC_ARM\main.o: main.cpp \
  mbed-os/platform/ScopedRamExecutionLock.h mbed-os/platform/mbed_stats.h \
  mbed-os/platform/Callback.h mbed-os/platform/FunctionPointer.h \
  mbed-os/platform/ScopedLock.h nlib\nworkbench.h nlib\fifo.h \
- nlib\BSP\bsp.h nlib\GPI\gpi.h nlib/nworkbench.h \
+ nlib\BSP\bsp.h nlib\GPIN\gpin.h nlib/nworkbench.h \
  nlib\ValueTrig\valuetrig.h nlib\L298\L298.h \
  nlib\StringFormat\stringformat.h nlib\StringSerial\stringserial.h \
  nlib\Ticker\ticker.h nlib\FlipFlop\flipflop.h nlib\GPOUT\gpout.h

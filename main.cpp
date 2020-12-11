@@ -7,7 +7,7 @@
 #include "nlib\nblocks.h"
 #include "nlib\BSP\bsp.h"
 // Custom nodes:
-#include "nlib\GPI\gpi.h"
+#include "nlib\GPIN\gpin.h"
 #include "nlib\ValueTrig\valuetrig.h"
 #include "nlib\L298\L298.h"
 #include "nlib\StringFormat\stringformat.h"
@@ -17,12 +17,12 @@
 #include "nlib\GPOUT\gpout.h"
 
 // -*-*- List of node objects -*-*-
-nBlock_GPI               nb_nBlockNode0_GPI          (PA_9);                    // X-NUCLEO-IHM04A1 OK
+nBlock_GPIN              nb_nBlockNode0_GPIN         (PA_9, PullDown);                    // X-NUCLEO-IHM04A1 OK
 nBlock_ValueTrig         nb_nBlockNode1_ValueTrig    (1);
-nBlock_GPI               nb_nBlockNode2_GPI          (PC_7);                    // X-NUCLEO-IHM04A1 OK
+nBlock_GPIN              nb_nBlockNode2_GPIN         (PB_6, PullDown);                    // X-NUCLEO-IHM04A1 OK
 nBlock_ValueTrig         nb_nBlockNode3_ValueTrig    (2);
-nBlock_L298              nb_nBlockNode4_L298         (PA_0, PA_1, PB_0);        // X-NUCLEO-IHM04A1 = PA_0, PA_1, PB_0, PC_1 can't work with PWM, short PB_0 & PC_1   
-nBlock_GPI               nb_nBlockNode5_GPI          (PB_6);                    // X-NUCLEO-IHM04A1 OK
+nBlock_L298              nb_nBlockNode4_L298         (PA_0, PA_1, PB_0);                  // X-NUCLEO-IHM04A1 = PA_0, PA_1, PB_0, PC_1 can't work with PWM, short PB_0 & PC_1   
+nBlock_GPIN              nb_nBlockNode5_GPIN         (PC_7, PullDown);                    // X-NUCLEO-IHM04A1 OK
 nBlock_ValueTrig         nb_nBlockNode6_ValueTrig    (0);
 nBlock_StringFormat      nb_nBlockNode7_StringFormat ("Value: %d\n");
 nBlock_StringSerial      nb_nBlockNode8_StringSerial (USBTX, USBRX);
@@ -34,15 +34,15 @@ nBlock_GPOUT             nb_nBlockNode11_GPOUT       (LED1, PullNone, 1);
 nBlockConnection    n_conn0( &nb_nBlockNode10_FlipFlop,    0,    &nb_nBlockNode11_GPOUT,       0);
 nBlockConnection    n_conn1( &nb_nBlockNode9_Ticker,       0,    &nb_nBlockNode10_FlipFlop,    0);
 nBlockConnection    n_conn2( &nb_nBlockNode7_StringFormat, 0,    &nb_nBlockNode8_StringSerial, 0);
-nBlockConnection    n_conn3( &nb_nBlockNode5_GPI,          1,    &nb_nBlockNode6_ValueTrig,    0);
-nBlockConnection    n_conn4( &nb_nBlockNode2_GPI,          1,    &nb_nBlockNode3_ValueTrig,    0);
+nBlockConnection    n_conn3( &nb_nBlockNode5_GPIN,         1,    &nb_nBlockNode6_ValueTrig,    0);
+nBlockConnection    n_conn4( &nb_nBlockNode2_GPIN,         1,    &nb_nBlockNode3_ValueTrig,    0);
 nBlockConnection    n_conn5( &nb_nBlockNode1_ValueTrig,    0,    &nb_nBlockNode4_L298,         0);
 nBlockConnection    n_conn6( &nb_nBlockNode1_ValueTrig,    0,    &nb_nBlockNode7_StringFormat, 0);
 nBlockConnection    n_conn7( &nb_nBlockNode3_ValueTrig,    0,    &nb_nBlockNode4_L298,         0);
 nBlockConnection    n_conn8( &nb_nBlockNode3_ValueTrig,    0,    &nb_nBlockNode7_StringFormat, 0);
 nBlockConnection    n_conn9( &nb_nBlockNode6_ValueTrig,    0,    &nb_nBlockNode4_L298,         0);
-nBlockConnection    n_conn10( &nb_nBlockNode6_ValueTrig,    0,    &nb_nBlockNode7_StringFormat, 0);
-nBlockConnection    n_conn11( &nb_nBlockNode0_GPI,          1,    &nb_nBlockNode1_ValueTrig,    0);
+nBlockConnection    n_conn10( &nb_nBlockNode6_ValueTrig,   0,    &nb_nBlockNode7_StringFormat, 0);
+nBlockConnection    n_conn11( &nb_nBlockNode0_GPIN,        1,    &nb_nBlockNode1_ValueTrig,    0);
 
 
 // -*-*- Main function -*-*-
