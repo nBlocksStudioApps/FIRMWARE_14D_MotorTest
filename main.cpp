@@ -18,12 +18,12 @@
 
 // -*-*- List of node objects -*-*-
 nBlock_GPIN              nb_nBlockNode0_GPIN         (PA_9, PullDown);                    // X-NUCLEO-IHM04A1 OK
-nBlock_ValueTrig         nb_nBlockNode1_ValueTrig    (1);
+nBlock_ValueTrig         nb_nBlockNode1_ValueTrig    (0x31);
 nBlock_GPIN              nb_nBlockNode2_GPIN         (PB_6, PullDown);                    // X-NUCLEO-IHM04A1 OK
-nBlock_ValueTrig         nb_nBlockNode3_ValueTrig    (2);
+nBlock_ValueTrig         nb_nBlockNode3_ValueTrig    (0x32);
 nBlock_L298              nb_nBlockNode4_L298         (PA_0, PA_1, PB_0);                  // X-NUCLEO-IHM04A1 = PA_0, PA_1, PB_0, PC_1 can't work with PWM, short PB_0 & PC_1   
 nBlock_GPIN              nb_nBlockNode5_GPIN         (PC_7, PullDown);                    // X-NUCLEO-IHM04A1 OK
-nBlock_ValueTrig         nb_nBlockNode6_ValueTrig    (0);
+nBlock_ValueTrig         nb_nBlockNode6_ValueTrig    (0x30);
 nBlock_StringFormat      nb_nBlockNode7_StringFormat ("Value: %d\n");
 nBlock_StringSerial      nb_nBlockNode8_StringSerial (USBTX, USBRX);
 nBlock_Ticker            nb_nBlockNode9_Ticker       (1000);
